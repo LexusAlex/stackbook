@@ -8,3 +8,4 @@ sidebarOrder: 10
 
 - [Versions](./versions)
 - [Installing Nginx](./installation)
+- [Startup and boot configuration](./startup)
