@@ -9,6 +9,7 @@ export default defineConfig({
   title: 'Stackbook',
   description: 'База знаний о серверной разработке, базах данных и инфраструктуре.',
   lang: 'ru-RU',
+  lastUpdated: true,
   // Pages builds use explicit .html links; local development keeps clean URLs.
   cleanUrls: process.env.GITHUB_PAGES !== 'true',
   // configure-pages supplies the project path or '/' for a root/custom domain.
@@ -43,6 +44,10 @@ export default defineConfig({
       themeConfig: {
         nav: navigation(),
         sidebar: sidebar(),
+        lastUpdated: {
+          text: 'Последнее обновление',
+          formatOptions: { dateStyle: 'medium', timeStyle: 'short', forceLocale: true }
+        },
         outline: { label: 'На этой странице', level: [2, 3] },
         docFooter: { prev: 'Предыдущая страница', next: 'Следующая страница' },
         sidebarMenuLabel: 'Меню',
@@ -84,6 +89,10 @@ export default defineConfig({
       themeConfig: {
         nav: navigation(true),
         sidebar: sidebar(true),
+        lastUpdated: {
+          text: 'Last updated',
+          formatOptions: { dateStyle: 'medium', timeStyle: 'short', forceLocale: true }
+        },
         outline: { label: 'On this page', level: [2, 3] },
         docFooter: { prev: 'Previous page', next: 'Next page' },
         sidebarMenuLabel: 'Menu',

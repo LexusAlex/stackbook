@@ -23,6 +23,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
+          # VitePress reads the last commit for each article.
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Configure Pages
