@@ -142,15 +142,36 @@ test('malformed frontmatter is reported instead of producing a misleading menu',
   assert.throws(() => generateSidebar(root), { name: 'YAMLException' })
 })
 
-test('the actual site still has exactly the current three root sections per language', () => {
-  assert.deepEqual(sidebar(), [
+test('the actual site keeps three root sections per language', () => {
+  const roots = (english = false) => sidebar(english).map(({ text, link }) => ({ text, link }))
+  assert.deepEqual(roots(), [
     { text: 'Backend (Сервер)', link: '/backend/' },
     { text: 'Базы данных', link: '/databases/' },
     { text: 'Инфраструктура', link: '/infrastructure/' }
   ])
-  assert.deepEqual(sidebar(true), [
+  assert.deepEqual(roots(true), [
     { text: 'Backend (Server)', link: '/en/backend/' },
     { text: 'Databases', link: '/en/databases/' },
     { text: 'Infrastructure', link: '/en/infrastructure/' }
   ])
+})
+
+test('Nginx Versions appears under Infrastructure and Servers in both languages', () => {
+  for (const { english, base, servers, versions } of [
+    { english: false, base: '', servers: 'Серверы', versions: 'Версии' },
+    { english: true, base: '/en', servers: 'Servers', versions: 'Versions' }
+  ]) {
+    const infrastructure = sidebar(english).find(item => item.link === `${base}/infrastructure/`)
+    assert.deepEqual(infrastructure?.items, [{
+      text: servers,
+      link: `${base}/infrastructure/servers/`,
+      collapsed: false,
+      items: [{
+        text: 'Nginx',
+        link: `${base}/infrastructure/servers/nginx/`,
+        collapsed: false,
+        items: [{ text: versions, link: `${base}/infrastructure/servers/nginx/versions` }]
+      }]
+    }])
+  }
 })
