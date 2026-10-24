@@ -1,13 +1,13 @@
 ---
 title: Knowledge base
-description: Documentation for backend development, databases and infrastructure.
+description: A knowledge base for backend development, databases, infrastructure and language learning.
 prev: false
 next: false
 ---
 
 # Knowledge base
 
-**Stackbook** — documentation for backend development, databases and infrastructure.
+**Stackbook** — a knowledge base for backend development, databases, infrastructure and language learning.
 
 ## Backend (Server)
 
@@ -20,3 +20,7 @@ next: false
 ## Infrastructure
 
 [Explore infrastructure →](./infrastructure/)
+
+## Languages
+
+[Explore languages →](./languages/)
