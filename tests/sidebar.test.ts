@@ -156,10 +156,10 @@ test('the actual site keeps three root sections per language', () => {
   ])
 })
 
-test('Nginx Versions appears under Infrastructure and Servers in both languages', () => {
-  for (const { english, base, servers, versions } of [
-    { english: false, base: '', servers: 'Серверы', versions: 'Версии' },
-    { english: true, base: '/en', servers: 'Servers', versions: 'Versions' }
+test('Nginx guides appear in reading order under Infrastructure and Servers in both languages', () => {
+  for (const { english, base, servers, versions, installation } of [
+    { english: false, base: '', servers: 'Серверы', versions: 'Версии', installation: 'Установка Nginx' },
+    { english: true, base: '/en', servers: 'Servers', versions: 'Versions', installation: 'Installing Nginx' }
   ]) {
     const infrastructure = sidebar(english).find(item => item.link === `${base}/infrastructure/`)
     assert.deepEqual(infrastructure?.items, [{
@@ -170,7 +170,10 @@ test('Nginx Versions appears under Infrastructure and Servers in both languages'
         text: 'Nginx',
         link: `${base}/infrastructure/servers/nginx/`,
         collapsed: true,
-        items: [{ text: versions, link: `${base}/infrastructure/servers/nginx/versions` }]
+        items: [
+          { text: versions, link: `${base}/infrastructure/servers/nginx/versions` },
+          { text: installation, link: `${base}/infrastructure/servers/nginx/installation` }
+        ]
       }]
     }])
   }

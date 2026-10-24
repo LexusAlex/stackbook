@@ -6,4 +6,5 @@ sidebarOrder: 10
 
 # Nginx
 
-[Версии →](./versions)
+- [Версии](./versions)
+- [Установка Nginx](./installation)
