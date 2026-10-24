@@ -5,7 +5,9 @@ sidebarOrder: 1
 prev:
   text: Английский
   link: /languages/english/
-next: false
+next:
+  text: Повторение слов и выражений
+  link: /languages/english/reviewing-words-and-phrases
 ---
 
 # Цель и начальная точка

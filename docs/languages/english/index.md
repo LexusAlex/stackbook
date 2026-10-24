@@ -12,3 +12,4 @@ next: false
 ## Подготовка к занятиям
 
 1. [Цель и начальная точка](./goal-and-starting-point)
+2. [Повторение слов и выражений](./reviewing-words-and-phrases)

@@ -12,3 +12,4 @@ English from the beginning for introductions, everyday conversations, travel and
 ## Getting ready to learn
 
 1. [Goal and starting point](./goal-and-starting-point)
+2. [Reviewing words and phrases](./reviewing-words-and-phrases)

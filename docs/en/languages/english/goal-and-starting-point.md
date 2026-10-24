@@ -5,7 +5,9 @@ sidebarOrder: 1
 prev:
   text: English
   link: /en/languages/english/
-next: false
+next:
+  text: Reviewing words and phrases
+  link: /en/languages/english/reviewing-words-and-phrases
 ---
 
 # Goal and starting point
