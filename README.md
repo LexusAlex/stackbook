@@ -95,6 +95,42 @@ sidebarOrder: 1
 
 ## Публикация
 
-Разместите содержимое `docs/.vitepress/dist/` на статическом хостинге. Для подкаталога задайте `base`, например `/stackbook/`, до сборки. Включён `cleanUrls`: хостинг должен отдавать `.html` для адресов без расширения. Если это не поддерживается, установите `cleanUrls: false`.
+Разместите содержимое `docs/.vitepress/dist/` на статическом хостинге. Базовый путь задаётся переменной `VITEPRESS_BASE` до сборки, по умолчанию `/`. Для подкаталога используйте, например, `/stackbook/`.
+
+По умолчанию включён `cleanUrls`: хостинг должен отдавать `.html` для адресов без расширения. При `GITHUB_PAGES=true` сборка использует явные `.html`-ссылки.
+
+## GitHub Pages через GitHub Actions
+
+Workflow `.github/workflows/deploy-pages.yml` проверяет проект, собирает сайт и публикует его в GitHub Pages после push в `master`. Также доступен ручной запуск через **Actions → Deploy Stackbook to GitHub Pages → Run workflow**.
+
+Для первого запуска:
+
+1. В репозитории откройте **Settings → Pages**.
+2. В **Build and deployment → Source** выберите **GitHub Actions**.
+3. Сохраните изменения проекта в Git и отправьте их в `master`.
+4. Дождитесь успешного выполнения workflow. Адрес будет показан в задании `deploy` и настройках Pages.
+
+Для текущего репозитория стандартный адрес после публикации — [https://lexusalex.github.io/stackbook/](https://lexusalex.github.io/stackbook/). Если переименуете основную ветку, измените `on.push.branches` в workflow.
+
+Workflow использует Node.js 24, версию pnpm из `package.json`, lockfile и кэш зависимостей. Перед публикацией выполняется `pnpm check`. Персональные токены и дополнительные секреты не требуются: используется встроенный `GITHUB_TOKEN`.
+
+Базовый путь берётся из `actions/configure-pages`: для проекта это `/stackbook/`, для сайта пользователя или настроенного собственного домена — `/`. Путь не нужно прописывать вручную. В Pages-сборке отключены чистые URL, поэтому прямое открытие вложенных статей использует `.html`.
+
+Чтобы проверить такую сборку локально в PowerShell:
+
+```powershell
+$env:GITHUB_PAGES = 'true'
+$env:VITEPRESS_BASE = '/stackbook/'
+pnpm build
+pnpm preview
+```
+
+После запуска предпросмотра откройте адрес с префиксом `/stackbook/`. Для возврата к обычной локальной сборке удалите переменные в этой сессии:
+
+```powershell
+Remove-Item Env:GITHUB_PAGES, Env:VITEPRESS_BASE -ErrorAction SilentlyContinue
+```
+
+Подробнее: [публикация VitePress на GitHub Pages](https://vitepress.dev/guide/deploy#github-pages) и [настройка workflows Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 [VitePress](https://vitepress.dev/) · [Локализация](https://vitepress.dev/guide/i18n) · [Поиск](https://vitepress.dev/reference/default-theme-search)

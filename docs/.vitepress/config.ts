@@ -3,16 +3,19 @@ import { docsDir, navigation, sidebar } from './navigation.ts'
 import { search } from './search.ts'
 import { automaticSidebar } from './sidebar.ts'
 
+const base = process.env.VITEPRESS_BASE || '/'
+
 export default defineConfig({
   title: 'Stackbook',
   description: 'База знаний о серверной разработке, базах данных и инфраструктуре.',
   lang: 'ru-RU',
-  cleanUrls: true,
-  // Change to '/stackbook/' when hosting in a subdirectory.
-  base: '/',
+  // Pages builds use explicit .html links; local development keeps clean URLs.
+  cleanUrls: process.env.GITHUB_PAGES !== 'true',
+  // configure-pages supplies the project path or '/' for a root/custom domain.
+  base,
   vite: { plugins: [automaticSidebar(docsDir)] },
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}logo.svg` }],
     ['meta', { name: 'theme-color', content: '#3451b2' }]
   ],
   markdown: {
