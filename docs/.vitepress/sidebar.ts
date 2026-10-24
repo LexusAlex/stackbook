@@ -53,7 +53,7 @@ export function generateSidebar(docsDir: string, locale: 'root' | 'en' = 'root')
         if (existsSync(index)) item.link = url(parts) + '/'
         if (children.length > 0) {
           item.items = children
-          item.collapsed = false
+          item.collapsed = true
         }
         entries.push({ item, name: entry.name, order })
       } else if (entry.isFile() && entry.name.endsWith('.md') && !['index.md', '404.md'].includes(entry.name)) {

@@ -23,7 +23,7 @@ function fixture(t: TestContext, files: Record<string, string>) {
   return root
 }
 
-test('a folder index is its own link and is not duplicated among children', (t) => {
+test('a folder group starts collapsed and links its index without duplicating it among children', (t) => {
   const root = fixture(t, {
     'index.md': '# Stackbook',
     'backend/index.md': '---\ntitle: Backend (Сервер)\n---\n# Backend',
@@ -33,20 +33,20 @@ test('a folder index is its own link and is not duplicated among children', (t) 
   assert.deepEqual(generateSidebar(root), [{
     text: 'Backend (Сервер)',
     link: '/backend/',
-    collapsed: false,
+    collapsed: true,
     items: [{ text: 'Очереди', link: '/backend/queues' }]
   }])
 })
 
-test('folders without index pages become groups without broken links', (t) => {
+test('folders without index pages become collapsed groups without broken links', (t) => {
   const root = fixture(t, { 'backend/jobs/queues.md': '# Очереди' })
 
   assert.deepEqual(generateSidebar(root), [{
     text: 'backend',
-    collapsed: false,
+    collapsed: true,
     items: [{
       text: 'jobs',
-      collapsed: false,
+      collapsed: true,
       items: [{ text: 'Очереди', link: '/backend/jobs/queues' }]
     }]
   }])
@@ -165,11 +165,11 @@ test('Nginx Versions appears under Infrastructure and Servers in both languages'
     assert.deepEqual(infrastructure?.items, [{
       text: servers,
       link: `${base}/infrastructure/servers/`,
-      collapsed: false,
+      collapsed: true,
       items: [{
         text: 'Nginx',
         link: `${base}/infrastructure/servers/nginx/`,
-        collapsed: false,
+        collapsed: true,
         items: [{ text: versions, link: `${base}/infrastructure/servers/nginx/versions` }]
       }]
     }])
