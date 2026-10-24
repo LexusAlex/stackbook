@@ -1,0 +1,23 @@
+name: stackbook
+
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    ports:
+      - "127.0.0.1:${STACKBOOK_PORT:-5173}:5173"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "250"
+    volumes:
+      - type: bind
+        source: ./docs
+        target: /app/docs
+      - type: volume
+        source: vitepress_cache
+        target: /app/docs/.vitepress/cache
+
+volumes:
+  vitepress_cache:

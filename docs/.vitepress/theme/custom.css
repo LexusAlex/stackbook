@@ -1,0 +1,37 @@
+:root {
+  --vp-c-brand-1: #3451b2;
+  --vp-c-brand-2: #3a5ccc;
+  --vp-c-brand-3: #5672cd;
+  --vp-c-brand-soft: rgba(52, 81, 178, 0.12);
+  --vp-sidebar-width: 272px;
+}
+
+.dark {
+  --vp-c-brand-1: #a8b8ff;
+  --vp-c-brand-2: #8da4ff;
+  --vp-c-brand-3: #6b85e8;
+  --vp-c-brand-soft: rgba(141, 164, 255, 0.14);
+}
+
+.VPNavBarTitle .title {
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.vp-doc h1 {
+  letter-spacing: -0.6px;
+}
+
+.vp-doc h2 {
+  letter-spacing: -0.3px;
+}
+
+.vp-doc a {
+  text-underline-offset: 3px;
+}
+
+/* Keep Cyrillic readable using the system font fallback bundled by the theme. */
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.8;
+}
