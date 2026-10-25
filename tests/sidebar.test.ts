@@ -158,10 +158,10 @@ test('the actual site keeps four root sections per language', () => {
   ])
 })
 
-test('Nginx guides appear in reading order under Infrastructure and Servers in both languages', () => {
-  for (const { english, base, servers, versions, installation, startup } of [
-    { english: false, base: '', servers: 'Серверы', versions: 'Версии', installation: 'Установка Nginx', startup: 'Запуск и автозагрузка' },
-    { english: true, base: '/en', servers: 'Servers', versions: 'Versions', installation: 'Installing Nginx', startup: 'Startup and boot configuration' }
+test('Infrastructure groups localized guides in reading order', () => {
+  for (const { english, base, servers, versions, installation, startup, linuxIntroduction } of [
+    { english: false, base: '', servers: 'Серверы', versions: 'Версии', installation: 'Установка Nginx', startup: 'Запуск и автозагрузка', linuxIntroduction: 'Что такое Linux' },
+    { english: true, base: '/en', servers: 'Servers', versions: 'Versions', installation: 'Installing Nginx', startup: 'Startup and boot configuration', linuxIntroduction: 'What is Linux?' }
   ]) {
     const infrastructure = sidebar(english).find(item => item.link === `${base}/infrastructure/`)
     assert.deepEqual(infrastructure?.items, [{
@@ -178,6 +178,11 @@ test('Nginx guides appear in reading order under Infrastructure and Servers in b
           { text: startup, link: `${base}/infrastructure/servers/nginx/startup` }
         ]
       }]
+    }, {
+      text: 'Linux',
+      link: `${base}/infrastructure/linux/`,
+      collapsed: true,
+      items: [{ text: linuxIntroduction, link: `${base}/infrastructure/linux/what-is-linux` }]
     }])
   }
 })

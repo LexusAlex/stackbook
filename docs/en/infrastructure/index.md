@@ -9,4 +9,5 @@ next: false
 
 Infrastructure documentation.
 
-[Servers →](./servers/)
+- [Servers](./servers/)
+- [Linux](./linux/)
