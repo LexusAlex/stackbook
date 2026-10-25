@@ -13,3 +13,7 @@ English from the beginning for introductions, everyday conversations, travel and
 
 1. [Goal and starting point](./goal-and-starting-point)
 2. [Reviewing words and phrases](./reviewing-words-and-phrases)
+
+## First sounds and reading
+
+3. [The English alphabet](./alphabet)

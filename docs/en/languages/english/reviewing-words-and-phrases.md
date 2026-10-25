@@ -5,7 +5,9 @@ sidebarOrder: 2
 prev:
   text: Goal and starting point
   link: /en/languages/english/goal-and-starting-point
-next: false
+next:
+  text: The English alphabet
+  link: /en/languages/english/alphabet
 ---
 
 # Reviewing words and phrases

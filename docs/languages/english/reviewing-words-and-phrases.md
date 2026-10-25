@@ -5,7 +5,9 @@ sidebarOrder: 2
 prev:
   text: Цель и начальная точка
   link: /languages/english/goal-and-starting-point
-next: false
+next:
+  text: Английский алфавит
+  link: /languages/english/alphabet
 ---
 
 # Повторение слов и выражений
