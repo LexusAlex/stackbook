@@ -9,3 +9,4 @@ sidebarOrder: 10
 - [Версии](./versions)
 - [Установка Nginx](./installation)
 - [Запуск и автозагрузка](./startup)
+- [Устройство конфигурации](./configuration)
