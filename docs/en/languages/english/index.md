@@ -17,3 +17,4 @@ English from the beginning for introductions, everyday conversations, travel and
 ## First sounds and reading
 
 3. [The English alphabet](./alphabet)
+4. [Letters and sounds](./letters-and-sounds)

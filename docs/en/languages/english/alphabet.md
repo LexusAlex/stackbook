@@ -5,7 +5,9 @@ sidebarOrder: 3
 prev:
   text: Reviewing words and phrases
   link: /en/languages/english/reviewing-words-and-phrases
-next: false
+next:
+  text: Letters and sounds
+  link: /en/languages/english/letters-and-sounds
 ---
 
 # The English alphabet

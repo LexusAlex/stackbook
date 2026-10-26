@@ -5,7 +5,9 @@ sidebarOrder: 3
 prev:
   text: Повторение слов и выражений
   link: /languages/english/reviewing-words-and-phrases
-next: false
+next:
+  text: Буква и звук
+  link: /languages/english/letters-and-sounds
 ---
 
 # Английский алфавит
