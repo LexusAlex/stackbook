@@ -25,7 +25,19 @@ systemctl cat nginx.service --no-pager
 
 В выводе `-V` найдите `--conf-path`. Для рассматриваемых пакетов обычно указан `/etc/nginx/nginx.conf`. В unit-файле проверьте `ExecStart` и дополнения к нему: параметр `-c` выбирает другой главный файл, а `-p` меняет префикс путей. Если служба использует другой бинарный файл или параметры `-c`, `-p`, учитывайте их и в командах проверки. [Как определить путь к конфигурации](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/#directives).
 
-Для стандартного пути прочитайте файл:
+Проверьте также `Environment` и `EnvironmentFile` в unit. Например, [unit официального пакета](https://github.com/nginx/pkg-oss/blob/master/debian/debian/nginx.service) задаёт переменные `CONFFILE` и `cmdopts`, затем читает необязательный файл `/etc/default/nginx`. Этот файл может переопределять переменные: `CONFFILE` передаётся в параметр `-c`, а `cmdopts` добавляет параметры запуска. Для такого unit посмотрите содержимое файла, если он существует:
+
+```sh
+if [ -f /etc/default/nginx ]; then
+    sudo sed -n '1,200p' /etc/default/nginx
+fi
+```
+
+Минус перед путём в `EnvironmentFile=-/etc/default/nginx` означает, что отсутствие файла допустимо. Если в вашем unit указан другой путь, проверьте его. Главный файл определяйте с учётом значений переменных и итоговых параметров `ExecStart`.
+
+`systemctl cat` показывает unit-файлы с диска. Если они изменены без `daemon-reload`, загруженные systemd настройки могут отличаться от этого вывода. Подробнее — в [описании systemctl cat](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html#cat%20PATTERN%E2%80%A6).
+
+Если после проверки переопределений служба использует стандартный путь, прочитайте файл:
 
 ```sh
 sudo sed -n '1,200p' /etc/nginx/nginx.conf

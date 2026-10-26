@@ -159,9 +159,9 @@ test('the actual site keeps four root sections per language', () => {
 })
 
 test('Infrastructure groups localized guides in reading order', () => {
-  for (const { english, base, servers, versions, installation, startup, configuration, linuxIntroduction } of [
-    { english: false, base: '', servers: 'Серверы', versions: 'Версии', installation: 'Установка Nginx', startup: 'Запуск и автозагрузка', configuration: 'Устройство конфигурации', linuxIntroduction: 'Что такое Linux' },
-    { english: true, base: '/en', servers: 'Servers', versions: 'Versions', installation: 'Installing Nginx', startup: 'Startup and boot configuration', configuration: 'Configuration structure', linuxIntroduction: 'What is Linux?' }
+  for (const { english, base, servers, versions, installation, startup, ipAccess, configuration, linuxIntroduction } of [
+    { english: false, base: '', servers: 'Серверы', versions: 'Версии', installation: 'Установка Nginx', startup: 'Запуск и автозагрузка', ipAccess: 'Доступ по IP', configuration: 'Устройство конфигурации', linuxIntroduction: 'Что такое Linux' },
+    { english: true, base: '/en', servers: 'Servers', versions: 'Versions', installation: 'Installing Nginx', startup: 'Startup and boot configuration', ipAccess: 'Access by IP address', configuration: 'Configuration structure', linuxIntroduction: 'What is Linux?' }
   ]) {
     const infrastructure = sidebar(english).find(item => item.link === `${base}/infrastructure/`)
     assert.deepEqual(infrastructure?.items, [{
@@ -176,6 +176,7 @@ test('Infrastructure groups localized guides in reading order', () => {
           { text: versions, link: `${base}/infrastructure/servers/nginx/versions` },
           { text: installation, link: `${base}/infrastructure/servers/nginx/installation` },
           { text: startup, link: `${base}/infrastructure/servers/nginx/startup` },
+          { text: ipAccess, link: `${base}/infrastructure/servers/nginx/ip-access` },
           { text: configuration, link: `${base}/infrastructure/servers/nginx/configuration` }
         ]
       }]

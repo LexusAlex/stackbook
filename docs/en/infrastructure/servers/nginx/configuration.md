@@ -25,7 +25,19 @@ systemctl cat nginx.service --no-pager
 
 Find `--conf-path` in the `-V` output. For the packages discussed here, it is usually `/etc/nginx/nginx.conf`. Check `ExecStart` and any overrides in the unit: `-c` selects a different main file, while `-p` changes the path prefix. If the service uses a different binary or `-c`, `-p` options, account for these in the inspection commands as well. [Finding the configuration path](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/#directives).
 
-For the standard path, read the file:
+Also check `Environment` and `EnvironmentFile` in the unit. For example, the [official package's unit](https://github.com/nginx/pkg-oss/blob/master/debian/debian/nginx.service) defines `CONFFILE` and `cmdopts`, then reads the optional `/etc/default/nginx` file. That file can override the variables: `CONFFILE` is passed to `-c`, while `cmdopts` supplies additional startup options. For such a unit, inspect the file if it exists:
+
+```sh
+if [ -f /etc/default/nginx ]; then
+    sudo sed -n '1,200p' /etc/default/nginx
+fi
+```
+
+The minus sign before the path in `EnvironmentFile=-/etc/default/nginx` means the file may be absent. If your unit specifies another path, check that file. Identify the main configuration file using the variable values and resulting `ExecStart` options.
+
+`systemctl cat` displays unit files from disk. If they were changed without `daemon-reload`, systemd's loaded settings may differ from this output. See the [systemctl cat reference](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html#cat%20PATTERN%E2%80%A6).
+
+If the service uses the standard path after accounting for overrides, read the file:
 
 ```sh
 sudo sed -n '1,200p' /etc/nginx/nginx.conf
