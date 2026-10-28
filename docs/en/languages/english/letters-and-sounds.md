@@ -5,7 +5,9 @@ sidebarOrder: 4
 prev:
   text: The English alphabet
   link: /en/languages/english/alphabet
-next: false
+next:
+  text: Word stress
+  link: /en/languages/english/word-stress
 ---
 
 # Letters and sounds

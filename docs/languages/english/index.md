@@ -18,3 +18,4 @@ next: false
 
 3. [Английский алфавит](./alphabet)
 4. [Буква и звук](./letters-and-sounds)
+5. [Ударение в слове](./word-stress)

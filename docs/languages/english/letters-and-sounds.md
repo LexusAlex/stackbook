@@ -5,7 +5,9 @@ sidebarOrder: 4
 prev:
   text: Английский алфавит
   link: /languages/english/alphabet
-next: false
+next:
+  text: Ударение в слове
+  link: /languages/english/word-stress
 ---
 
 # Буква и звук
