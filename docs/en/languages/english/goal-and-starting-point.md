@@ -1,6 +1,6 @@
 ---
 title: Goal and starting point
-description: Start English in five minutes — choose a goal, try a few short tasks and say one sentence about yourself.
+description: Read, listen and introduce yourself in English — all exercises and checks are on this page.
 sidebarOrder: 1
 prev:
   text: English
@@ -12,100 +12,45 @@ next:
 
 # Goal and starting point
 
-**Start with 5 minutes.** Today, you will try a few short tasks and give your name in English. You need sound and your usual notes app or a piece of paper.
+**About 5 minutes: read, choose answers and say one sentence about yourself.** Everything happens here. If time runs out, continue from the remaining step next time.
 
-If time runs out, stop after the current step. Continue from there next time. “I don't know yet” is a useful answer: we are finding your starting point.
+First, decide why you want English: **introductions, travel or work**. Today, try an introduction. Mistakes are welcome — the answers help you see what is still difficult.
 
-## 1. Choose a goal — half a minute
-
-Write one line:
-
-> I want to introduce myself: give my name and ask the other person's name.
-
-Keep this goal or replace it with your own, such as ordering coffee on a trip. Write in your first language for now.
-
-## 2. Try it yourself — two minutes
-
-Make one attempt at each task. Put your answers in the same note. If you cannot answer, write “not yet” and move on.
-
-### Reading
-
-Read:
+## 1. Read and choose an answer
 
 > Hi! My name is Alex. I live in Moscow.
 
-Which city does Alex live in? Write the city in your first language. You do not need to read aloud.
+<LessonCheck lang="en" question="Which city does Alex live in?" :options="['Kazan', 'Moscow', 'London']" :correct="1" explanation="I live in Moscow — «Я живу в Москве»." />
 
-### Listening
+You do not need to read aloud yet. This checks reading — understanding written text.
 
-Press **▶**, listen to the man's first turn and pause. **What is his name?** Write what you heard. You do not need the whole recording; you can replay the opening once.
+## 2. Listen to the opening
+
+Press **▶**. Pause after the man's first turn. You only need to hear his name.
 
 <audio controls preload="none" aria-label="Introductions — British Council audio">
   <source src="https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Meeting_a_new_team_member.mp3" type="audio/mpeg">
   Your browser does not support this audio player.
 </audio>
 
-[Source and backup player: British Council — Meeting a new team member](https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-new-team-member). On the source page, **Transcript** opens the conversation text; leave it closed for now.
+<LessonCheck lang="en" question="What is the man's name?" :options="['Alex', 'Peter', 'Anna']" :correct="1" explanation="He introduces himself in his first turn: Peter. Replay the opening if you could not hear it yet." />
 
-### Speaking
+This is **listening practice** — understanding spoken language. You do not need the whole conversation.
 
-Try to give your name in English without a model. Say whatever you remember. In your note, write “gave my name” or “not yet”.
+## 3. Speak and write about yourself
 
-### Writing
+**Hi!** — «Привет!» **My name's Alex.** — «Меня зовут Алекс». In the recording, *my name's* is a short form of *my name is*.
 
-Try to write one sentence with your name. If you do not know how yet, say so in your first language. Keep this attempt: you will add a version with help next to it later.
+Enter your name below or keep Alex for practice. Read the model aloud. Then click **Hide model**, say it again and type the phrase in the field. The button checks your written words; compare your speech with the recording above by listening.
 
-## 3. Check and repeat — one minute
+<LessonName lang="en" />
 
-::: details Check reading and listening
+**Finished for today:** you tried reading, listening, speaking and writing. Next time, try introducing yourself without the model, then continue to [Reviewing words and phrases](./reviewing-words-and-phrases).
 
-- Alex lives in Moscow.
-- The man's name is Peter.
+::: details Audio source and help
 
-If you could not hear his name, replay the opening now that you know the answer.
+Recording: [British Council — Meeting a new team member](https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-new-team-member). You do not need to visit the source to complete this lesson.
 
-:::
-
-Read these two phrases:
-
-| English | Russian |
-| --- | --- |
-| Hi! | Привет! |
-| My name's Alex. | Меня зовут Алекс. |
-
-At the start of the recording, the man says **My name's Peter.** Listen to that phrase again and repeat it with your own name. **My name's** is a short form of **My name is** from the reading task.
-
-Now write **“With a model: Hi! My name's …”** in your note, replacing the dots with your name.
-
-## 4. Save your voice — one minute
-
-Open the voice recorder on your phone or computer. Press record, say **Hi! My name's …** with your own name, and stop. You can look at the model.
-
-Save the voice recording as **English — lesson 1**. A few seconds is enough. If the recorder needs setting up, just say the phrase aloud today and save a recording next time.
-
-## 5. Finished for today — half a minute
-
-Add one line: **“Difficult: …”** For example: “Difficult to hear the name.”
-
-::: details What a note might look like
-
-An imaginary learner's example:
-
-```text
-Goal: learn to introduce myself.
-Reading: Moscow.
-Listening: could not hear the name yet.
-Speaking: only said my name.
-Writing: do not know how to make the sentence yet.
-With a model: Hi! My name's Alex.
-Difficult: hearing the name in the recording.
-Voice: saved, read from the model.
-```
-
-Your answers may be different. You do not need to copy the whole example.
+If the recording does not load, do the reading and name exercise today and return to listening later.
 
 :::
-
-**Enough for today:** choose a goal, try the tasks and say one sentence about yourself. You do not need to memorise anything before the next lesson.
-
-Next time, open [Reviewing words and phrases](./reviewing-words-and-phrases). In a week, try giving your name without a model again and compare it with your first attempt. If you postponed the voice recording, start your next session with it.
