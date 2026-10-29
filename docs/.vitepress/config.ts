@@ -7,7 +7,7 @@ const base = process.env.VITEPRESS_BASE || '/'
 
 export default defineConfig({
   title: 'Stackbook',
-  description: 'База знаний о серверной разработке, базах данных, инфраструктуре и изучении языков.',
+  description: 'База знаний о серверной разработке, базах данных, инфраструктуре, изучении языков и инструментах разработки.',
   lang: 'ru-RU',
   lastUpdated: true,
   // Pages builds use explicit .html links; local development keeps clean URLs.
@@ -69,7 +69,7 @@ export default defineConfig({
       label: 'English',
       lang: 'en-US',
       link: '/en/',
-      description: 'A knowledge base for backend development, databases, infrastructure and language learning.',
+      description: 'A knowledge base for backend development, databases, infrastructure, language learning and development tools.',
       markdown: {
         container: {
           infoLabel: 'Info',

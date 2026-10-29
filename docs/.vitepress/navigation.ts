@@ -11,7 +11,8 @@ export function navigation(english = false): DefaultTheme.NavItem[] {
     { text: english ? 'Backend' : 'Backend (Сервер)', link: `${base}/backend/` },
     { text: english ? 'Databases' : 'Базы данных', link: `${base}/databases/` },
     { text: english ? 'Infrastructure' : 'Инфраструктура', link: `${base}/infrastructure/` },
-    { text: english ? 'Languages' : 'Языки', link: `${base}/languages/` }
+    { text: english ? 'Languages' : 'Языки', link: `${base}/languages/` },
+    { text: english ? 'Tools' : 'Инструменты', link: `${base}/tools/` }
   ]
 }
 
