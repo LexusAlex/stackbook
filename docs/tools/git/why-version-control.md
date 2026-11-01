@@ -5,7 +5,9 @@ sidebarOrder: 10
 prev:
   text: Git
   link: /tools/git/
-next: false
+next:
+  text: Git и сервисы размещения репозиториев
+  link: /tools/git/git-and-hosting-services
 ---
 
 # Зачем нужен контроль версий

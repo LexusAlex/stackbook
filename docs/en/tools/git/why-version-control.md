@@ -5,7 +5,9 @@ sidebarOrder: 10
 prev:
   text: Git
   link: /en/tools/git/
-next: false
+next:
+  text: Git and repository hosting services
+  link: /en/tools/git/git-and-hosting-services
 ---
 
 # Why use version control?

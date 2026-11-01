@@ -13,3 +13,4 @@ Learn Git in small steps, from understanding version control to commits, branche
 ## Introduction and setup
 
 1. [Why use version control?](./why-version-control)
+2. [Git and repository hosting services](./git-and-hosting-services)
